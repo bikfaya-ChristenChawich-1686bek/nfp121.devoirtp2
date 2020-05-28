@@ -30,9 +30,14 @@ public class FahrenheitCelsius{
       *   @return  la conversion en degré Celsius
       */
      public static float fahrenheitEnCelsius( int f){
-       // ...
-       return 0.F;	// à compléter	en remplaçant la valeur retournée par la fonction de conversion
-       // ...
+       float cell=5/9.0F*(f-32);
+       NumberFormat formatter= NuberFormat.getInstance(Locale.US);
+       formatter.setMaximumFactionDigits(1);
+       String temp=formatter.format(cel);
+       temp=temp.replaceAll("[,;\\s]","");
+       Float formatedFloat=new Float(temp);
+       return formatedFloat;
+       
      }
 
 }
